@@ -87,7 +87,7 @@ public class SettingsWindow extends JFrame {
 		else if (selectedGuiStyle == GuiStyle.NIMBUS_STYLE)
 			gui_style_drop_down.setSelectedIndex(2);
 		
-		game_mode_drop_down = new JComboBox<String>();
+		game_mode_drop_down = new JComboBox<>();
 		game_mode_drop_down.addItem("Human Vs Minimax AI");
 		game_mode_drop_down.addItem("Human Vs Human");
 		game_mode_drop_down.addItem("Minimax AI Vs Minimax AI");
