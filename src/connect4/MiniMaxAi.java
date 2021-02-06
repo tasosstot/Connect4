@@ -146,22 +146,19 @@ public class MiniMaxAi {
 	            
 				Move move = minAlphaBeta(child, depth + 1, a, b);
 	            
-				if (move.getValue() >= maxMove.getValue()) {
-	                if ((move.getValue() == maxMove.getValue())) {
-	                    
-	                    if (r.nextInt(2) == 0) {
-	                        maxMove.setRow(child.getLastMove().getRow());
-	                        maxMove.setColumn(child.getLastMove().getColumn());
-	                        maxMove.setValue(move.getValue());
-	                    }
-	                }
-	                else {
-	                    maxMove.setRow(child.getLastMove().getRow());
-	                    maxMove.setColumn(child.getLastMove().getColumn());
-	                    maxMove.setValue(move.getValue());
-	                }
+				if((move.getValue() == maxMove.getValue()) && (r.nextInt(2) == 0)){
+						maxMove.setRow(child.getLastMove().getRow());
+						maxMove.setColumn(child.getLastMove().getColumn());
+						maxMove.setValue(move.getValue());
 				}
-				
+
+
+				if else(){
+						maxMove.setRow(child.getLastMove().getRow());
+						maxMove.setColumn(child.getLastMove().getColumn());
+						maxMove.setValue(move.getValue());
+
+				}				
 				
 				if (maxMove.getValue() >= b) {
 					// System.out.println("Beta pruning: " + b);
@@ -186,21 +183,18 @@ public class MiniMaxAi {
 			Move minMove = new Move(Integer.MAX_VALUE);
 			for (Board child : children) {
 				Move move = maxAlphaBeta(child, depth + 1, a, b);
-				if(move.getValue() <= minMove.getValue()) {
-	                if ((move.getValue() == minMove.getValue())) {
-	                    if (r.nextInt(2) == 0) {
-	                        minMove.setRow(child.getLastMove().getRow());
-	                        minMove.setColumn(child.getLastMove().getColumn());
-	                        minMove.setValue(move.getValue());
-	                    }
-	                }
-	                else {
-	                        minMove.setRow(child.getLastMove().getRow());
-	                        minMove.setColumn(child.getLastMove().getColumn());
-	                        minMove.setValue(move.getValue());
-	                }
-	            }
-				
+
+			if((move.getValue() == minMove.getValue()) && (r.nextInt(2) == 0)){
+				minMove.setRow(child.getLastMove().getRow());
+				minMove.setColumn(child.getLastMove().getColumn());
+				minMove.setValue(move.getValue());
+			}
+			if else(move.getValue() <= minMove.getValue()){
+				minMove.setRow(child.getLastMove().getRow());
+				minMove.setColumn(child.getLastMove().getColumn());
+				minMove.setValue(move.getValue());
+
+			}			
 				
 				if (minMove.getValue() <= a) {
 					
