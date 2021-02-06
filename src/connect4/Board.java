@@ -110,7 +110,7 @@ public class Board {
 	
 	
 	public ArrayList<Board> getChildren(int letter) {
-		ArrayList<Board> children = new ArrayList<Board>();
+		ArrayList<Board> children = new ArrayList<>();
 		for(int col=0; col<numOfColumns; col++) {
 			if(!checkFullColumn(col)) {
 				Board child = new Board(this);
